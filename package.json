@@ -1,0 +1,34 @@
+{
+  "name": "iterators",
+  "version": "0.0.1",
+  "description": "iterate over collections in sync & async",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/iterators.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/iterators",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/iterators/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "devDependencies": {
+    "testling": "git://github.com/Raynos/testling#implement-render",
+    "testem": "git://github.com/Raynos/testem#master",
+    "sinon": "git://github.com/Raynos/Sinon.JS.git",
+    "tap": "0.2.5"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/raynos/iterators/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "test": "make node-test"
+  }
+}
