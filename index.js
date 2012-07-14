@@ -1,4 +1,5 @@
 module.exports = {
+    // sync
     mapSync: require("./lib/sync/map")
     , filterSync: require("./lib/sync/filter")
     , reduceSync: require("./lib/sync/reduce")
@@ -6,6 +7,8 @@ module.exports = {
     , someSync: require("./lib/sync/some")
     , forEachSync: require("./lib/sync/forEach")
     , reduceRightSync: require("./lib/sync/reduceRight")
+    // async
+    , forEach: require("./lib/async/forEach")
 }
 // iterators.reduceRightSync
 

@@ -28,10 +28,6 @@ This library fixes the following nitpicks:
  - provides asynchronous implementations of all iterators that use a 
     callback<Error, Value> instead of returning the value
 
-## Further Examples
-
-See [unit tests][3]
-
 ## Installation
 
 `npm install composite`
