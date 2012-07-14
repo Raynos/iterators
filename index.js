@@ -1,14 +1,12 @@
 module.exports = {
     mapSync: require("./lib/sync/map")
     , filterSync: require("./lib/sync/filter")
+    , reduceSync: require("./lib/sync/reduce")
+    , everySync: require("./lib/sync/every")
+    , someSync: require("./lib/sync/some")
+    , forEachSync: require("./lib/sync/forEach")
+    , reduceRightSync: require("./lib/sync/reduceRight")
 }
-
-//iterators.mapSync = require("./lib/sync/map")
-//iterators.filterSync = require("./lib/sync/filter")
-//iterators.reduceSync = require("./lib/sync/reduce")
-// iterators.forEachSync
-// iterators.everySync
-// iterators.someSync
 // iterators.reduceRightSync
 
 //iterators.map = require("./lib/async/map")
