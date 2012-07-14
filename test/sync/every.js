@@ -26,13 +26,13 @@ test("every calls each iterator", function (t) {
 test("every fails if false", function (t) {
     var item = createItem()
         , iterator = sinon.spy(function (v) {
-            return false
+            return null
         })
 
     var result = every(item, iterator)
 
     t.ok(iterator.calledOnce, "iterator was not called once")
-    t.equal(result, false, "result is not false")
+    t.equal(result, null, "result is not false")
 
     t.end()
 })

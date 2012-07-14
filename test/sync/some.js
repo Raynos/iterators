@@ -26,13 +26,13 @@ test("some calls each iterator", function (t) {
 test("some returns false if all fail", function (t) {
     var item = createItem()
         , iterator = sinon.spy(function (v) {
-            return false
+            return null
         })
 
     var result = some(item, iterator)
 
     t.ok(iterator.calledThrice, "iterator was not called three times")
-    t.equal(result, false, "result is not false")
+    t.equal(result, null, "result is not false")
 
     t.end()
 })
