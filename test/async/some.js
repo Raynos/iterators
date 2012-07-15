@@ -1,46 +1,61 @@
 var test = require("testling")
     , sinon = require("sinon")
-    , forEach = require("../..").forEach
+    , some = require("../..").some
     , createItem = require("..").createItem
 
-test("forEach calls each iterator", function (t) {
+test("some calls each iterator", function (t) {
     var item = createItem()
         , spy = sinon.spy()
         , iterator = function (value, callback) {
             spy.apply(this, arguments)
-            callback()
+            callback(null, value === "b1" ? value : null)
         }
         , done = sinon.spy()
 
-    forEach(item, iterator, done)
+    some(item, iterator, done)
 
     t.ok(spy.calledThrice, "iterator is not called three times")
     t.ok(spy.getCall(0).calledWith("a1", sinon.match.func),
         "iterator called with wrong arguments")
     t.ok(spy.getCall(1).calledWith("b1", sinon.match.func),
         "iterator called with wrong arguments")
-    t.ok(spy.getCall(2).calledWith("c1", sinon.match.func),
-        "iterator called with wrong argument")
     t.ok(done.calledOnce, "done was not called")
-    t.deepEqual(done.args[0], [null], "done not called correctly")
+    t.deepEqual(done.args[0], [null, "b1"], "done not called correctly")
 
     t.end()
 })
 
-test("forEach calls iterator with correct this value", function (t) {
+test("some calls iterator with correct this value", function (t) {
     var item = createItem()
         , iterator = sinon.spy()
         , thisValue = {}
         , done = sinon.spy()
 
-    forEach(item, iterator, thisValue, done)
+    some(item, iterator, thisValue, done)
 
     t.ok(iterator.calledOn(thisValue), "this value is incorrect")
 
     t.end()
 })
 
-test("returns error appropiately", function (t) {
+test("some returns false if all fail", function (t) {
+    var item = createItem()
+        , spy = sinon.spy()
+        , iterator = function (v, callback) {
+            spy.apply(this, arguments)
+            callback(null, null)
+        }
+        , done = sinon.spy()
+
+    some(item, iterator, done)
+
+    t.ok(spy.calledThrice, "iterator was not called three times")
+    t.deepEqual(done.args[0], [null, null], "result is not false")
+
+    t.end()
+})
+
+test("some error appropiately", function (t) {
     var item = createItem()
         , errorValue = {}
         , iterator = function(callback) {
@@ -48,7 +63,7 @@ test("returns error appropiately", function (t) {
         }
         , done = sinon.spy()
 
-    forEach(item, iterator, done)
+    some(item, iterator, done)
 
     t.equal(done.args[0][0], errorValue, "this value is incorrect")
 
@@ -64,7 +79,7 @@ test("calls iterator with the callback last", function (t) {
         }
         , done = sinon.spy()
 
-    forEach(item, iterator, done)
+    some(item, iterator, done)
 
     t.ok(spy.calledThrice, "iterator was not called thrice")
 

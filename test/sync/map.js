@@ -1,6 +1,7 @@
 var test = require("testling")
     , sinon = require("sinon")
     , map = require("../..").mapSync
+    , createItem = require("..").createItem
 
 test("map calls iterator with each item", function (t) {
     var item = createItem()
@@ -44,11 +45,3 @@ test("map returns array when called on array", function (t) {
 
     t.end()
 })
-
-function createItem() {
-    return {
-        a: "a1"
-        , b: "b1"
-        , c: "c1"
-    }
-}

@@ -1,6 +1,7 @@
 var test = require("testling")
     , sinon = require("sinon")
     , filter = require("../..").filterSync
+    , createItem = require("..").createItem
 
 test("filter calls each iterator", function (t) {
     var item = createItem()
@@ -48,11 +49,3 @@ test("filter returns an array when called on array", function (t) {
 
     t.end()
 })
-
-function createItem() {
-    return {
-        a: "a1"
-        , b: "b1"
-        , c: "c1"
-    }
-}

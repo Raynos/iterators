@@ -1,6 +1,7 @@
 var test = require("testling")
     , sinon = require("sinon")
     , reduce = require("../..").reduceSync
+    , createItem = require("..").createItem
 
 test("reduce calls each iterator", function (t) {
     var item = createItem()
@@ -54,11 +55,3 @@ test("reduce reduces with first value if no initialValue", function (t) {
 
     t.end()
 })
-
-function createItem() {
-    return {
-        a: "a1"
-        , b: "b1"
-        , c: "c1"
-    }
-}
