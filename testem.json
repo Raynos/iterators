@@ -11,5 +11,5 @@
         , "./index.js"
     ]
     , "node": "node_modules/.bin/tap"
-    , "node-args": ["--tap", "test"]
+    , "node-args": ["--tap", "--stderr", "test"]
 }
