@@ -32,6 +32,6 @@
     "test": "make node-test"
   },
   "dependencies": {
-    "ap": "~0.1.0"
+    "ap": "git://github.com/Raynos/node-ap"
   }
 }
