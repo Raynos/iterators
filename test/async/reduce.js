@@ -1,6 +1,6 @@
 var test = require("testling")
     , sinon = require("sinon")
-    , reduce = require("../..").reduce
+    , reduce = require("../..").reduceAsync
     , createItem = require("..").createItem
 
 test("reduce calls each iterator", function (t) {

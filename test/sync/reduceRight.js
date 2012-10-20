@@ -1,6 +1,6 @@
 var test = require("testling")
     , sinon = require("sinon")
-    , reduceRight = require("../..").reduceRightSync
+    , reduceRight = require("../..").reduceRight
     , createItem = require("..").createItem
 
 test("reduce calls each iterator", function (t) {

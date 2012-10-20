@@ -1,6 +1,6 @@
 var test = require("testling")
     , sinon = require("sinon")
-    , map = require("../..").mapSync
+    , map = require("../..").map
     , createItem = require("..").createItem
 
 test("map calls iterator with each item", function (t) {

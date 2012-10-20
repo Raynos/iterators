@@ -32,6 +32,8 @@
     "test": "make node-test"
   },
   "dependencies": {
-    "ap": "git://github.com/Raynos/node-ap"
+    "ap": "git://github.com/Raynos/node-ap",
+    "xtend": "~1.0.3",
+    "to-array": "~0.1.3"
   }
 }

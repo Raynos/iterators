@@ -1,6 +1,6 @@
 var test = require("testling")
     , sinon = require("sinon")
-    , map = require("../..").map
+    , map = require("../..").mapAsync
     , createItem = require("..").createItem
 
 test("filter calls each iterator", function (t) {

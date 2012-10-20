@@ -1,6 +1,6 @@
 var test = require("testling")
     , sinon = require("sinon")
-    , every = require("../..").everySync
+    , every = require("../..").every
     , createItem = require("..").createItem
 
 test("every calls each iterator", function (t) {
