@@ -30,7 +30,7 @@ This library fixes the following nitpicks:
 
 ## Installation
 
-`npm install composite`
+`npm install iterators`
 
 ## Tests
 
